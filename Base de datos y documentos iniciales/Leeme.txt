@@ -1,0 +1,41 @@
+El contenido de los diferentes directorios es el siguiente:
+
+Base de datos
+
+	Esquema_ER.png -> Diagrama ER guardado desde MySQL Workbench
+	Modelo_ER.odt  -> Documento de LibreOffice describiendo las tablas y
+			  relaciones
+	Script_creacion_bd.sql -> Para crear la bd en MySQL Workbench
+	Script_insercion_datos.sql -> Para rellenar la BD con datos de prueba
+				      en MySQL Workbench
+	Exportacion_BD.sql -> Archivo creado con MySQL Workbench,
+			      para importar la bd
+
+Diagrama UML
+
+	Contiene diferentes imágenes png con los diagramas:
+		- Arquitectura de la aplicación
+		- Diagrama de casos UML
+		- Diagrama de flujo o actividad
+
+	y también el documento de texto descriptivo:
+		Arquitectura de la aplicación.odt
+		
+Hojas de datos en PDF
+
+	Contiene 4 documento PDF con las diferentes hojas de entrada de datos
+		Ficha_Alta_Cliente_Electroservicios.pdf
+		Ficha_Alta_Productos_Repuestos_Electroservicios.pdf
+		Ficha_Alta_Proveedor_Electroservicios.pdf
+		Hoja_de_Servicios_Electroservicios.pdf
+
+Diagrama BPMN
+
+	Contiene 2 archivos
+		Diagrama_BPMN.png -> Imagen con el diagrama BPMN
+		Proceso de Reparacion_BPMN.odt -> Documento de texto
+
+Y en la raíz esta el siguiente documento
+
+	Descripción de hoja de servicios con ITIL.odt
+
