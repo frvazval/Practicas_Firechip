@@ -1,5 +1,7 @@
 -- Modelo EER ampliado de GLPI para MySQL Workbench (entidades principales y relaciones)
 -- Puedes importar este archivo directamente en MySQL Workbench
+CREATE DATABASE glpi;
+USE glpi;
 
 CREATE TABLE glpi_entities (
     id INT AUTO_INCREMENT PRIMARY KEY,
