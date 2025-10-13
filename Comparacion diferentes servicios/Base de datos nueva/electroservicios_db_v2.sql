@@ -6,7 +6,7 @@
 CREATE DATABASE IF NOT EXISTS electroservicios_db_v2
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE electroservicios_db_v3;
+USE electroservicios_db_v2;
 
 -- ===========================================
 -- Tabla entidades (clientes, proveedores, usuarios unificados)
