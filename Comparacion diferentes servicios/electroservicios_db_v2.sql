@@ -1,16 +1,15 @@
 
 -- ===========================================
--- Script Mejorado de la Base de Datos Electroservicios (v2)
--- Inspirado en buenas prácticas de Odoo, Zoho, ServiceNow y GLPI
+-- Script Mejorado de la Base de Datos Electroservicios (v3)
 -- ===========================================
 
 CREATE DATABASE IF NOT EXISTS electroservicios_db_v2
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE electroservicios_db_v2;
+USE electroservicios_db_v3;
 
 -- ===========================================
--- Tabla de entidades (unificación de clientes, proveedores, usuarios)
+-- Tabla entidades (clientes, proveedores, usuarios unificados)
 -- ===========================================
 CREATE TABLE entidades (
     id_entidad INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,12 +24,16 @@ CREATE TABLE entidades (
     identificacion VARCHAR(50), -- DNI, CIF/NIF
     rol ENUM('tecnico','administrador','supervisor','ninguno') DEFAULT 'ninguno',
     estado ENUM('activo','inactivo') DEFAULT 'activo',
-    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-    fecha_modificacion DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by INT,
+    updated_by INT,
+    FOREIGN KEY (created_by) REFERENCES entidades(id_entidad),
+    FOREIGN KEY (updated_by) REFERENCES entidades(id_entidad)
 );
 
 -- ===========================================
--- Tabla productos (separada de movimientos de stock)
+-- Tabla productos
 -- ===========================================
 CREATE TABLE productos (
     id_producto INT AUTO_INCREMENT PRIMARY KEY,
@@ -46,12 +49,14 @@ CREATE TABLE productos (
     stock_minimo INT DEFAULT 0,
     ubicacion VARCHAR(100),
     observaciones TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_proveedor) REFERENCES entidades(id_entidad)
         ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 -- ===========================================
--- Tabla movimientos de stock (entradas/salidas)
+-- Tabla movimientos de stock
 -- ===========================================
 CREATE TABLE movimientos_stock (
     id_movimiento INT AUTO_INCREMENT PRIMARY KEY,
@@ -68,7 +73,7 @@ CREATE TABLE movimientos_stock (
 );
 
 -- ===========================================
--- Tabla servicios (tickets/ordenes)
+-- Tabla servicios (tickets y órdenes de trabajo)
 -- ===========================================
 CREATE TABLE servicios (
     id_servicio INT AUTO_INCREMENT PRIMARY KEY,
@@ -80,6 +85,11 @@ CREATE TABLE servicios (
     id_tecnico INT,
     descripcion TEXT,
     estado ENUM('pendiente','en_curso','finalizado','entregado','cerrado') DEFAULT 'pendiente',
+    prioridad ENUM('baja','media','alta','critica') DEFAULT 'media',
+    impacto ENUM('bajo','medio','alto') DEFAULT 'medio',
+    urgencia ENUM('baja','media','alta') DEFAULT 'media',
+    sla_tiempo_respuesta INT, -- en horas
+    sla_tiempo_resolucion INT, -- en horas
     observaciones TEXT,
     firma_cliente VARCHAR(255),
     firma_tecnico VARCHAR(255),
@@ -90,7 +100,7 @@ CREATE TABLE servicios (
 );
 
 -- ===========================================
--- Materiales usados en servicios
+-- Tabla materiales usados en servicios
 -- ===========================================
 CREATE TABLE materiales_usados (
     id_material INT AUTO_INCREMENT PRIMARY KEY,
@@ -106,7 +116,7 @@ CREATE TABLE materiales_usados (
 );
 
 -- ===========================================
--- Facturas (cabecera + detalle)
+-- Facturación (cabecera + detalle)
 -- ===========================================
 CREATE TABLE facturas (
     id_factura INT AUTO_INCREMENT PRIMARY KEY,
@@ -131,7 +141,7 @@ CREATE TABLE factura_detalle (
 );
 
 -- ===========================================
--- Tabla adjuntos (archivos ligados a entidades, servicios, facturas)
+-- Adjuntos y comentarios
 -- ===========================================
 CREATE TABLE adjuntos (
     id_adjunto INT AUTO_INCREMENT PRIMARY KEY,
@@ -145,9 +155,6 @@ CREATE TABLE adjuntos (
         ON UPDATE CASCADE ON DELETE SET NULL
 );
 
--- ===========================================
--- Tabla comentarios/notas
--- ===========================================
 CREATE TABLE comentarios (
     id_comentario INT AUTO_INCREMENT PRIMARY KEY,
     tabla_origen ENUM('entidades','productos','servicios','facturas') NOT NULL,
