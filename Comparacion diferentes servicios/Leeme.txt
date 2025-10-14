@@ -1,0 +1,19 @@
+El contenido de los diferentes directorios es el siguiente:
+
+Los directorios GLPI, Odoo, Servicenow y Zoho:
+	contienen documentación referente a cada servicio.
+		- Diagramas ML y BPMN
+		- Estructura de la base de datos en SQL
+		- Diagrama ER de la base de datos
+
+El directorio Comparativa y mejoras:
+	Contiene los siguientes documentos con propuestas de mejora.
+		- comparativa_helpdesk.pdf
+		- plan_mejoras_electroservicios.pdf
+		- mejoras_necesarias.odt
+		- Plan_mejora_pr_fases.odt
+
+
+Y el directorio Base de datos nueva con las mejoras:
+	Contiene el Script SQL de la base de datos mejorada y el diagrama ER
+
