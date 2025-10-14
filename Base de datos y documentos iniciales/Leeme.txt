@@ -35,7 +35,7 @@ Diagrama BPMN
 		Diagrama_BPMN.png -> Imagen con el diagrama BPMN
 		Proceso de Reparacion_BPMN.odt -> Documento de texto
 
-Y en la raíz esta el siguiente documento
+Y fuera de los directorios esta el siguiente documento
 
 	Descripción de hoja de servicios con ITIL.odt
 
