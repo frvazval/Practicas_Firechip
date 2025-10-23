@@ -1,0 +1,5 @@
+Este directorio contiene los siguientes elementos:
+	- URL_Odoo.txt (Archivo que contiene la URL para conecterse a Odoo 	Cloud y los datos de Login)
+
+	- Documentos (Directorio que contiene los siguientes documentos)
+
