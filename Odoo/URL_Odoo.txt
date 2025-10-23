@@ -1,0 +1,6 @@
+https://practica-firechip.odoo.com/odoo
+
+Usuario y password:
+
+francisco.vazquez@firechip.dev
+Atari2600
