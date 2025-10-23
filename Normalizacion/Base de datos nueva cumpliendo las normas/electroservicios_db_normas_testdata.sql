@@ -1,176 +1,129 @@
 USE electroservicios_db_normas;
 
 -- ===========================================
--- DATOS DE PRUEBA PARA electroservicios_db_normas
+-- ENTIDADES (Clientes, Proveedores y Usuarios)
 -- ===========================================
+INSERT INTO entidades (tipo, nombre, email, telefono, direccion, codigo_postal, ciudad, provincia, identificacion, rol, estado)
+VALUES
+('cliente', 'Industrias Romero S.A.', 'mantenimiento@industriasromero.es', '911234567', 'Av. del Progreso 120', '28032', 'Madrid', 'Madrid', 'A12345678', 'ninguno', 'activo'),
+('cliente', 'Electrodomésticos Vega', 'contacto@vegaelectro.com', '958441122', 'Calle Granada 45', '18004', 'Granada', 'Granada', 'B23456789', 'ninguno', 'activo'),
+('proveedor', 'Siemens España S.L.', 'ventas@siemens.es', '934556677', 'C/ Aragó 385', '08013', 'Barcelona', 'Barcelona', 'A45678912', 'ninguno', 'activo'),
+('proveedor', 'Schneider Electric Iberia', 'pedidos@schneider-electric.com', '914225577', 'C/ Albasanz 16', '28037', 'Madrid', 'Madrid', 'A78912345', 'ninguno', 'activo'),
+('proveedor', 'Omron Electronics Iberia', 'soporte@omron.es', '935444210', 'C/ Balmes 231', '08006', 'Barcelona', 'Barcelona', 'A98765432', 'ninguno', 'activo'),
+('usuario', 'Javier Torres', 'jtorres@electroservicios.com', '600111222', 'C/ Alcalá 45', '28014', 'Madrid', 'Madrid', '12345678A', 'tecnico', 'activo'),
+('usuario', 'Lucía Navarro', 'lnavarro@electroservicios.com', '600333444', 'C/ Goya 12', '28001', 'Madrid', 'Madrid', '87654321B', 'administrador', 'activo'),
+('usuario', 'Miguel Ruiz', 'mruiz@electroservicios.com', '601223344', 'C/ O’Donnell 18', '28009', 'Madrid', 'Madrid', '11223344C', 'supervisor', 'activo');
 
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('proveedor','Entidad 1','entidad1@mail.com','6000001','Calle Falsa 1','28001','Ciudad 1','Provincia 1','ID1','ninguno','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('cliente','Entidad 2','entidad2@mail.com','6000002','Calle Falsa 2','28002','Ciudad 2','Provincia 2','ID2','ninguno','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('proveedor','Entidad 3','entidad3@mail.com','6000003','Calle Falsa 3','28003','Ciudad 3','Provincia 3','ID3','ninguno','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('cliente','Entidad 4','entidad4@mail.com','6000004','Calle Falsa 4','28004','Ciudad 4','Provincia 4','ID4','ninguno','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('cliente','Entidad 5','entidad5@mail.com','6000005','Calle Falsa 5','28005','Ciudad 5','Provincia 5','ID5','ninguno','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('cliente','Entidad 6','entidad6@mail.com','6000006','Calle Falsa 6','28006','Ciudad 6','Provincia 6','ID6','ninguno','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('proveedor','Entidad 7','entidad7@mail.com','6000007','Calle Falsa 7','28007','Ciudad 7','Provincia 7','ID7','ninguno','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('usuario','Entidad 8','entidad8@mail.com','6000008','Calle Falsa 8','28008','Ciudad 8','Provincia 8','ID8','tecnico','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('usuario','Entidad 9','entidad9@mail.com','6000009','Calle Falsa 9','28009','Ciudad 9','Provincia 9','ID9','administrador','activo');
-INSERT INTO entidades (tipo,nombre,email,telefono,direccion,codigo_postal,ciudad,provincia,identificacion,rol,estado) VALUES ('usuario','Entidad 10','entidad10@mail.com','60000010','Calle Falsa 10','280010','Ciudad 10','Provincia 10','ID10','administrador','activo');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P001','Producto 1','Descripcion producto 1','Marca1','Modelo1','Categoria1',3, 134, 32, 5, 'Estante 1','Obs producto 1');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P002','Producto 2','Descripcion producto 2','Marca2','Modelo2','Categoria2',3, 73, 45, 5, 'Estante 2','Obs producto 2');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P003','Producto 3','Descripcion producto 3','Marca3','Modelo3','Categoria3',3, 177, 19, 5, 'Estante 3','Obs producto 3');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P004','Producto 4','Descripcion producto 4','Marca4','Modelo4','Categoria4',1, 166, 2, 5, 'Estante 4','Obs producto 4');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P005','Producto 5','Descripcion producto 5','Marca5','Modelo5','Categoria5',2, 71, 9, 5, 'Estante 5','Obs producto 5');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P006','Producto 6','Descripcion producto 6','Marca6','Modelo6','Categoria6',3, 70, 32, 5, 'Estante 6','Obs producto 6');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P007','Producto 7','Descripcion producto 7','Marca7','Modelo7','Categoria7',3, 94, 33, 5, 'Estante 7','Obs producto 7');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P008','Producto 8','Descripcion producto 8','Marca8','Modelo8','Categoria8',3, 126, 47, 5, 'Estante 8','Obs producto 8');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P009','Producto 9','Descripcion producto 9','Marca9','Modelo9','Categoria9',2, 152, 35, 5, 'Estante 9','Obs producto 9');
-INSERT INTO productos (codigo_referencia,nombre,descripcion,marca,modelo,categoria,id_proveedor,precio_unitario,stock_actual,stock_minimo,ubicacion,observaciones) VALUES ('P010','Producto 10','Descripcion producto 10','Marca10','Modelo10','Categoria10',1, 85, 45, 5, 'Estante 10','Obs producto 10');
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (7,'entrada',10,'REF1',6);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (3,'salida',6,'REF2',2);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (5,'entrada',17,'REF3',9);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (3,'salida',5,'REF4',2);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (1,'ajuste',5,'REF5',8);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (1,'entrada',2,'REF6',4);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (5,'ajuste',1,'REF7',5);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (10,'salida',16,'REF8',6);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (2,'entrada',4,'REF9',2);
-INSERT INTO movimientos_stock (id_producto,tipo,cantidad,referencia,usuario_id) VALUES (2,'entrada',19,'REF10',8);
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD001','orden_trabajo',4,9,'Servicio 1','pendiente','media','medio','media',24,72,'Obs servicio 1');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD002','orden_trabajo',4,6,'Servicio 2','pendiente','media','medio','media',24,72,'Obs servicio 2');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD003','orden_trabajo',2,6,'Servicio 3','pendiente','media','medio','media',24,72,'Obs servicio 3');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD004','orden_trabajo',5,9,'Servicio 4','pendiente','media','medio','media',24,72,'Obs servicio 4');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD005','orden_trabajo',5,10,'Servicio 5','pendiente','media','medio','media',24,72,'Obs servicio 5');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD006','orden_trabajo',2,9,'Servicio 6','pendiente','media','medio','media',24,72,'Obs servicio 6');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD007','orden_trabajo',2,8,'Servicio 7','pendiente','media','medio','media',24,72,'Obs servicio 7');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD008','orden_trabajo',4,7,'Servicio 8','pendiente','media','medio','media',24,72,'Obs servicio 8');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD009','orden_trabajo',4,9,'Servicio 9','pendiente','media','medio','media',24,72,'Obs servicio 9');
-INSERT INTO servicios (num_orden,tipo,id_cliente,id_tecnico,descripcion,estado,prioridad,impacto,urgencia,sla_tiempo_respuesta,sla_tiempo_resolucion,observaciones) VALUES ('ORD010','orden_trabajo',3,8,'Servicio 10','pendiente','media','medio','media',24,72,'Obs servicio 10');
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (4,6,2,41);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (3,9,5,95);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (7,10,5,70);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (10,10,4,46);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (4,6,4,81);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (9,7,3,79);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (9,7,5,70);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (5,5,1,20);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (1,6,5,93);
-INSERT INTO materiales_usados (id_servicio,id_producto,cantidad,precio_unitario) VALUES (6,5,2,95);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F001',4,'2023-09-07','pendiente',538);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F002',2,'2023-04-02','pendiente',636);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F003',4,'2023-05-05','pendiente',176);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F004',4,'2023-05-03','pendiente',331);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F005',3,'2023-07-03','pendiente',541);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F006',5,'2023-03-04','pendiente',290);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F007',4,'2023-05-04','pendiente',833);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F008',1,'2023-06-05','pendiente',577);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F009',2,'2023-05-01','pendiente',512);
-INSERT INTO facturas (num_factura,id_cliente,fecha_emision,estado,total) VALUES ('F010',4,'2023-03-02','pendiente',318);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (7,'Concepto 1',5,182);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (7,'Concepto 2',5,187);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (6,'Concepto 3',5,89);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (1,'Concepto 4',3,40);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (8,'Concepto 5',3,134);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (9,'Concepto 6',3,87);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (4,'Concepto 7',1,29);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (3,'Concepto 8',2,184);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (7,'Concepto 9',2,48);
-INSERT INTO factura_detalle (id_factura,concepto,cantidad,precio_unitario) VALUES (7,'Concepto 10',1,59);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('entidades',1,'archivo1.pdf','/uploads/archivo1.pdf',1);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('facturas',10,'archivo2.pdf','/uploads/archivo2.pdf',6);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('servicios',5,'archivo3.pdf','/uploads/archivo3.pdf',9);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('entidades',7,'archivo4.pdf','/uploads/archivo4.pdf',7);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('productos',2,'archivo5.pdf','/uploads/archivo5.pdf',3);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('productos',9,'archivo6.pdf','/uploads/archivo6.pdf',1);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('entidades',5,'archivo7.pdf','/uploads/archivo7.pdf',2);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('facturas',5,'archivo8.pdf','/uploads/archivo8.pdf',2);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('facturas',5,'archivo9.pdf','/uploads/archivo9.pdf',6);
-INSERT INTO adjuntos (tabla_origen,id_origen,nombre_archivo,ruta,usuario_id) VALUES ('productos',3,'archivo10.pdf','/uploads/archivo10.pdf',6);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('productos',4,'Comentario de prueba 1',5);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('servicios',5,'Comentario de prueba 2',8);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('facturas',2,'Comentario de prueba 3',2);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('facturas',8,'Comentario de prueba 4',4);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('facturas',10,'Comentario de prueba 5',4);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('productos',7,'Comentario de prueba 6',10);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('servicios',10,'Comentario de prueba 7',9);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('facturas',2,'Comentario de prueba 8',8);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('productos',6,'Comentario de prueba 9',10);
-INSERT INTO comentarios (tabla_origen,id_origen,texto,usuario_id) VALUES ('servicios',6,'Comentario de prueba 10',6);
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC001','Documento 1','procedimiento','v1.0','vigente','2023-01-01',2,'/docs/doc1.pdf','Obs doc 1');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC002','Documento 2','procedimiento','v1.0','vigente','2023-01-02',3,'/docs/doc2.pdf','Obs doc 2');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC003','Documento 3','procedimiento','v1.0','vigente','2023-01-03',10,'/docs/doc3.pdf','Obs doc 3');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC004','Documento 4','procedimiento','v1.0','vigente','2023-01-04',2,'/docs/doc4.pdf','Obs doc 4');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC005','Documento 5','procedimiento','v1.0','vigente','2023-01-05',5,'/docs/doc5.pdf','Obs doc 5');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC006','Documento 6','procedimiento','v1.0','vigente','2023-01-06',6,'/docs/doc6.pdf','Obs doc 6');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC007','Documento 7','procedimiento','v1.0','vigente','2023-01-07',2,'/docs/doc7.pdf','Obs doc 7');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC008','Documento 8','procedimiento','v1.0','vigente','2023-01-08',1,'/docs/doc8.pdf','Obs doc 8');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC009','Documento 9','procedimiento','v1.0','vigente','2023-01-09',7,'/docs/doc9.pdf','Obs doc 9');
-INSERT INTO documentos_calidad (codigo,titulo,tipo,version,estado,fecha_emision,responsable_id,archivo,observaciones) VALUES ('DOC010','Documento 10','procedimiento','v1.0','vigente','2023-01-010',1,'/docs/doc10.pdf','Obs doc 10');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC001','2023-02-01','proceso_interno','Descripcion NC 1',3,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC002','2023-02-02','cliente','Descripcion NC 2',6,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC003','2023-02-03','proceso_interno','Descripcion NC 3',8,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC004','2023-02-04','auditoria','Descripcion NC 4',7,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC005','2023-02-05','proceso_interno','Descripcion NC 5',2,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC006','2023-02-06','auditoria','Descripcion NC 6',10,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC007','2023-02-07','cliente','Descripcion NC 7',9,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC008','2023-02-08','cliente','Descripcion NC 8',6,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC009','2023-02-09','cliente','Descripcion NC 9',5,'abierta');
-INSERT INTO no_conformidades (codigo,fecha_detectada,origen,descripcion,id_responsable,estado) VALUES ('NC010','2023-02-010','auditoria','Descripcion NC 10',9,'abierta');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (5,'Accion correctiva 1',9,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (10,'Accion correctiva 2',4,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (5,'Accion correctiva 3',2,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (4,'Accion correctiva 4',9,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (6,'Accion correctiva 5',1,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (10,'Accion correctiva 6',6,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (6,'Accion correctiva 7',8,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (8,'Accion correctiva 8',3,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (3,'Accion correctiva 9',4,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO acciones_correctivas (id_nc,descripcion,responsable_id,fecha_inicio,fecha_fin,estado) VALUES (3,'Accion correctiva 10',6,'2023-03-01','2023-03-15','pendiente');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-01','Auditor 1','ISO9001','planificada','Informe auditoria 1');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-02','Auditor 2','ISO9001','planificada','Informe auditoria 2');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-03','Auditor 3','ISO9001','planificada','Informe auditoria 3');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-04','Auditor 4','ISO9001','planificada','Informe auditoria 4');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-05','Auditor 5','ISO9001','planificada','Informe auditoria 5');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-06','Auditor 6','ISO9001','planificada','Informe auditoria 6');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-07','Auditor 7','ISO9001','planificada','Informe auditoria 7');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-08','Auditor 8','ISO9001','planificada','Informe auditoria 8');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-09','Auditor 9','ISO9001','planificada','Informe auditoria 9');
-INSERT INTO auditorias (tipo,fecha,auditor,norma_aplicable,estado,informe) VALUES ('interna','2023-04-010','Auditor 10','ISO9001','planificada','Informe auditoria 10');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (6,'Hallazgo 1','no_conformidad_menor',6,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (3,'Hallazgo 2','observacion',4,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (3,'Hallazgo 3','no_conformidad_mayor',6,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (8,'Hallazgo 4','observacion',1,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (5,'Hallazgo 5','no_conformidad_menor',7,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (6,'Hallazgo 6','no_conformidad_menor',8,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (5,'Hallazgo 7','no_conformidad_menor',1,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (1,'Hallazgo 8','no_conformidad_mayor',5,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (10,'Hallazgo 9','observacion',10,'pendiente');
-INSERT INTO hallazgos_auditoria (id_auditoria,descripcion,clasificacion,responsable_id,estado) VALUES (5,'Hallazgo 10','no_conformidad_menor',8,'pendiente');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (3,'2023-05-01',50,64,89,'aprobado','Comentarios eval 1');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (1,'2023-05-02',93,71,85,'aprobado','Comentarios eval 2');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (2,'2023-05-03',66,81,58,'aprobado','Comentarios eval 3');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (5,'2023-05-04',97,75,62,'aprobado','Comentarios eval 4');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (3,'2023-05-05',72,65,61,'aprobado','Comentarios eval 5');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (2,'2023-05-06',71,82,98,'aprobado','Comentarios eval 6');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (1,'2023-05-07',96,84,90,'aprobado','Comentarios eval 7');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (4,'2023-05-08',52,86,65,'aprobado','Comentarios eval 8');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (2,'2023-05-09',62,68,51,'aprobado','Comentarios eval 9');
-INSERT INTO evaluaciones_proveedores (id_proveedor,fecha,criterio_calidad,criterio_entrega,criterio_costo,resultado,comentarios) VALUES (3,'2023-05-010',56,71,58,'aprobado','Comentarios eval 10');
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 1','Desc indicador 1','%',100,71,'2023-06-01',9);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 2','Desc indicador 2','%',100,96,'2023-06-02',3);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 3','Desc indicador 3','%',100,70,'2023-06-03',1);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 4','Desc indicador 4','%',100,79,'2023-06-04',10);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 5','Desc indicador 5','%',100,92,'2023-06-05',10);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 6','Desc indicador 6','%',100,75,'2023-06-06',7);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 7','Desc indicador 7','%',100,76,'2023-06-07',4);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 8','Desc indicador 8','%',100,80,'2023-06-08',9);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 9','Desc indicador 9','%',100,67,'2023-06-09',10);
-INSERT INTO indicadores_calidad (nombre,descripcion,unidad_medida,meta,valor_actual,periodo,responsable_id) VALUES ('Indicador 10','Desc indicador 10','%',100,78,'2023-06-010',4);
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('oportunidad','Descripcion oportunidad 1','alta','bajo','Plan accion 1',7,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('oportunidad','Descripcion oportunidad 2','media','alto','Plan accion 2',7,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('riesgo','Descripcion riesgo 3','media','alto','Plan accion 3',7,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('oportunidad','Descripcion oportunidad 4','alta','medio','Plan accion 4',10,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('oportunidad','Descripcion oportunidad 5','alta','medio','Plan accion 5',1,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('oportunidad','Descripcion oportunidad 6','media','bajo','Plan accion 6',4,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('riesgo','Descripcion riesgo 7','alta','alto','Plan accion 7',5,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('oportunidad','Descripcion oportunidad 8','alta','medio','Plan accion 8',7,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('riesgo','Descripcion riesgo 9','alta','alto','Plan accion 9',1,'abierto');
-INSERT INTO riesgos_oportunidades (tipo,descripcion,probabilidad,impacto,plan_accion,responsable_id,estado) VALUES ('oportunidad','Descripcion oportunidad 10','media','bajo','Plan accion 10',4,'abierto');
+-- ===========================================
+-- PRODUCTOS (Componentes y equipos eléctricos/electrónicos)
+-- ===========================================
+INSERT INTO productos (codigo_referencia, nombre, descripcion, marca, modelo, categoria, id_proveedor, precio_unitario, stock_actual, stock_minimo, ubicacion)
+VALUES
+('SMN-PLC-1001', 'PLC Siemens S7-1200', 'Controlador lógico programable modular', 'Siemens', 'CPU1212C', 'Control industrial', 3, 320.00, 15, 3, 'A1-01'),
+('SCH-VFD-2002', 'Variador de frecuencia 2.2kW', 'Variador para motor trifásico 400V', 'Schneider Electric', 'Altivar 12', 'Control de motores', 4, 410.00, 8, 2, 'A2-03'),
+('OMR-SEN-3003', 'Sensor de proximidad inductivo M12', 'Sensor NPN 12VDC alcance 4mm', 'Omron', 'E2E-X4D1', 'Sensores', 5, 25.00, 50, 10, 'B1-01'),
+('SCH-RLY-4004', 'Relé de control 24VDC', 'Relé electromecánico con base incluida', 'Schneider Electric', 'RXM4AB2BD', 'Automatización', 4, 12.50, 100, 20, 'B2-01'),
+('SMN-PSU-5005', 'Fuente de alimentación 24V 10A', 'Fuente con protección contra cortocircuitos', 'Siemens', 'Sitop PSU100S', 'Fuentes de alimentación', 3, 130.00, 25, 5, 'C1-01');
+
+-- ===========================================
+-- MOVIMIENTOS DE STOCK
+-- ===========================================
+INSERT INTO movimientos_stock (id_producto, tipo, cantidad, referencia, usuario_id)
+VALUES
+(1, 'entrada', 15, 'Pedido inicial SIEM2025-01', 7),
+(2, 'entrada', 8, 'Pedido inicial SCH2025-01', 7),
+(3, 'entrada', 50, 'Pedido inicial OMR2025-01', 7),
+(4, 'entrada', 100, 'Pedido inicial SCH2025-02', 7),
+(5, 'entrada', 25, 'Pedido inicial SIEM2025-02', 7),
+(3, 'salida', 5, 'Servicio S001', 6);
+
+-- ===========================================
+-- SERVICIOS (Reparaciones, instalaciones y mantenimiento)
+-- ===========================================
+INSERT INTO servicios (num_orden, tipo, id_cliente, id_tecnico, descripcion, estado, prioridad, impacto, urgencia, sla_tiempo_respuesta, sla_tiempo_resolucion, observaciones)
+VALUES
+('OT-2025-001', 'orden_trabajo', 1, 6, 'Revisión de cuadro eléctrico en línea de producción', 'en_curso', 'alta', 'medio', 'alta', 4, 24, 'Cliente requiere reinicio de línea urgente'),
+('OT-2025-002', 'orden_trabajo', 2, 6, 'Reparación de fuente de alimentación Siemens Sitop', 'finalizado', 'media', 'bajo', 'media', 8, 48, 'Reemplazo completado con éxito'),
+('OT-2025-003', 'ticket', 1, 6, 'Configuración de variador Altivar 12', 'pendiente', 'media', 'medio', 'media', 6, 24, 'Pendiente visita programada para la semana próxima');
+
+-- ===========================================
+-- MATERIALES USADOS EN SERVICIOS
+-- ===========================================
+INSERT INTO materiales_usados (id_servicio, id_producto, cantidad, precio_unitario)
+VALUES
+(1, 4, 4, 12.50),
+(1, 3, 2, 25.00),
+(2, 5, 1, 130.00),
+(3, 2, 1, 410.00);
+
+-- ===========================================
+-- FACTURAS Y DETALLES
+-- ===========================================
+INSERT INTO facturas (num_factura, id_cliente, fecha_emision, estado, total)
+VALUES
+('F-2025-001', 1, '2025-10-05', 'pagada', 200.00),
+('F-2025-002', 2, '2025-10-10', 'pendiente', 130.00);
+
+INSERT INTO factura_detalle (id_factura, concepto, cantidad, precio_unitario)
+VALUES
+(1, 'Revisión y reparación cuadro eléctrico', 1, 200.00),
+(2, 'Reparación fuente de alimentación Siemens', 1, 130.00);
+
+-- ===========================================
+-- DOCUMENTOS DE CALIDAD
+-- ===========================================
+INSERT INTO documentos_calidad (codigo, titulo, tipo, version, fecha_emision, responsable_id, archivo, observaciones)
+VALUES
+('DOC-001', 'Manual de Calidad Electroservicios', 'manual', 'v2.0', '2025-02-15', 8, '/docs/calidad/manual_calidad_v2.pdf', 'Adaptado a ISO 9001:2015'),
+('PROC-002', 'Procedimiento de mantenimiento preventivo', 'procedimiento', 'v1.1', '2025-03-10', 7, '/docs/calidad/procedimientos/mantenimiento_preventivo.pdf', 'Incluye nuevas rutinas de calibración');
+
+-- ===========================================
+-- NO CONFORMIDADES Y ACCIONES CORRECTIVAS
+-- ===========================================
+INSERT INTO no_conformidades (codigo, fecha_detectada, origen, descripcion, id_responsable, estado)
+VALUES
+('NC-2025-001', '2025-04-14', 'proceso_interno', 'No se registró calibración del multímetro Fluke', 8, 'en_proceso'),
+('NC-2025-002', '2025-06-20', 'cliente', 'Retraso en entrega de reparación a cliente Vega', 7, 'abierta');
+
+INSERT INTO acciones_correctivas (id_nc, descripcion, responsable_id, fecha_inicio, estado)
+VALUES
+(1, 'Actualizar registro de calibraciones mensuales', 7, '2025-04-20', 'implementada'),
+(2, 'Revisar tiempos de reparación y optimizar planificación', 6, '2025-06-25', 'en_proceso');
+
+-- ===========================================
+-- AUDITORÍAS Y HALLAZGOS
+-- ===========================================
+INSERT INTO auditorias (tipo, fecha, auditor, norma_aplicable, estado, informe)
+VALUES
+('interna', '2025-04-10', 'Laura Sánchez', 'ISO9001', 'realizada', 'Auditoría interna de primer semestre. Hallazgos menores.'),
+('proveedor', '2025-07-05', 'Miguel Ruiz', 'IATF16949', 'cerrada', 'Evaluación positiva de proveedores principales.');
+
+INSERT INTO hallazgos_auditoria (id_auditoria, descripcion, clasificacion, responsable_id)
+VALUES
+(1, 'Control documental de calibraciones incompleto', 'no_conformidad_menor', 8),
+(2, 'Evaluaciones de proveedores fuera de plazo', 'observacion', 7);
+
+-- ===========================================
+-- EVALUACIONES DE PROVEEDORES
+-- ===========================================
+INSERT INTO evaluaciones_proveedores (id_proveedor, fecha, criterio_calidad, criterio_entrega, criterio_costo, resultado, comentarios)
+VALUES
+(3, '2025-05-01', 9, 9, 8, 'aprobado', 'Proveedor confiable y con entrega puntual'),
+(4, '2025-05-01', 8, 10, 9, 'aprobado', 'Excelente soporte técnico y documentación'),
+(5, '2025-05-01', 7, 9, 8, 'condicional', 'Se requiere mejora en embalaje de sensores');
+
+-- ===========================================
+-- INDICADORES DE CALIDAD
+-- ===========================================
+INSERT INTO indicadores_calidad (nombre, descripcion, unidad_medida, meta, valor_actual, periodo, responsable_id)
+VALUES
+('Índice de reparaciones exitosas', 'Porcentaje de reparaciones resueltas sin reingresos', '%', 98.00, 96.50, '2025-09-30', 8),
+('Tiempo medio de respuesta a incidencias', 'Horas promedio desde notificación hasta atención', 'horas', 6.00, 5.75, '2025-09-30', 7);
+
+-- ===========================================
+-- RIESGOS Y OPORTUNIDADES
+-- ===========================================
+INSERT INTO riesgos_oportunidades (tipo, descripcion, probabilidad, impacto, plan_accion, responsable_id)
+VALUES
+('riesgo', 'Dependencia de un único proveedor de PLCs', 'media', 'alto', 'Diversificar compras con otras marcas como Omron', 8),
+('oportunidad', 'Certificación ISO 14001 para ampliación de mercado', 'baja', 'alto', 'Preparar plan de implementación ambiental', 7);
