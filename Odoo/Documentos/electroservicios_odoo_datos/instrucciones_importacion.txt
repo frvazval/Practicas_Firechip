@@ -1,0 +1,33 @@
+INSTRUCCIONES DE IMPORTACIÓN A ODOO CLOUD – ELECTROSERVICIOS
+
+1. CONTACTOS
+   - Módulo: Contactos → Importar
+   - Archivo: contactos.csv
+   - Validar columnas: Nombre, Tipo, Correo, Teléfono, Dirección, Ciudad, País
+
+2. PRODUCTOS
+   - Módulo: Inventario → Productos → Importar
+   - Archivo: productos.csv
+   - Validar columnas: Nombre, Referencia, Tipo, Categoría, Precio (€), Stock
+
+3. USUARIOS (TÉCNICOS)
+   - Módulo: Configuración → Usuarios → Importar
+   - Archivo: usuarios.csv
+   - Validar columnas: Nombre, Correo, Rol
+
+4. TICKETS DE HELPDESK
+   - Módulo: Helpdesk → Tickets → Importar
+   - Archivo: tickets.csv
+   - Validar columnas: Título, Descripción, Impacto, Urgencia, Cliente, Asignado a, Estado
+   - Importar después de Contactos y Usuarios.
+
+5. MATERIALES USADOS
+   - Módulo: Inventario → Importar
+   - Archivo: materiales_usados.csv
+   - Validar columnas: Ticket_ID, Producto, Unidades
+   - Importar después de Tickets y Productos.
+
+Consejos:
+- Todos los archivos están en formato UTF-8.
+- Antes de importar, hacer clic en “Prueba de Importación”.
+- Revisar que los campos de texto largos estén entre comillas.
