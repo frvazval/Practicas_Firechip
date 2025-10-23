@@ -4,6 +4,7 @@ El directorio "Base de datos nueva cumpliendo las normas", que contiene los sigu
 	- Diagrama_ER.pdf (Diagrama ER de la BD)
 	- electroservicios_db_normas.sql (Script SQL para crear la BD)
 	- electroservicios_db_normas_testdata.sql (Para rellenar la BD con 	datos de ejemplo)
+	- Exportacion_BD.sql (BD rellenada con datos de prueba)
 
 El directorio "Documentación normas", que contiene 2 pdf informativos:
 	- NOM_ISO_9001-2015.pdf
