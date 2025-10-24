@@ -1,4 +1,4 @@
-https://practica-firechip.odoo.com/odoo
+https://electroservicios1.odoo.com/odoo
 
 Usuario y password:
 
